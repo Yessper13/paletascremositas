@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="css/stylesPedido.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <script>
+            window.onload = function() {
+                // Obtener el carrito de sessionStorage
+                let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+                
+                // Seleccionar el cuerpo de la tabla donde se agregarán los productos
+                const carritoBody = document.getElementById('carritoBody');
+                
+                // Recorrer el carrito y agregar cada producto como una fila en la tabla
+                carrito.forEach(producto => {
+                    let row = `<tr>
+                        <td>${producto.nombre}</td>
+                        <td>${producto.cantidad}</td>
+                        <td>$${producto.precio}</td>
+                    </tr>`;
+                    carritoBody.innerHTML += row;
+                });
+            };
+            </script>
+        <table id="tablaCarrito" border="1">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Cantidad</th>
+                    <th>Valor Total</th>
+                </tr>
+            </thead>
+            <tbody id="carritoBody">
+                <!-- Las filas de productos se agregarán aquí -->
+            </tbody>
+        </table>
+        
+    </main>
+    <div id="footer"></div>
+    <script src="header_footer/conn.js"></script>
+</body>
+
+</html>

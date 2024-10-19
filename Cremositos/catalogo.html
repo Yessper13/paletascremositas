@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="css/stylesCatalogo.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="botones.js"></script>
+
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <hr>
+        <h3>Catálogo de Productos</h3>
+        <div class="catalogo">
+            <!-- Producto 1 -->
+            <div class="producto">
+                <img src="imagen/ice_cream_.png" alt="Producto 1">
+                <h3>Mango Biche</h3>
+                <hr>
+                <span>$2,000</span>
+                <br><br>
+                <button onclick="AggProducto('Mango Biche', 1, 2000)">Añadir al carrito</button>
+            </div>
+    
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="imagen/paleta.jpg" alt="Producto 2">
+                <h3>Maracu-Mango</h3>
+                <hr>
+                <span>$2,000</span>
+                <br><br>
+                <button id="producto" onclick="AggProducto()">Añadir al carrito</button>
+            </div>
+    
+            <!-- Producto 3 -->
+            <div class="producto">
+                <img src="imagen/ice_cream.ico" alt="Producto 3">
+                <h3>Oreo</h3>
+                <hr>
+                <span>$2,000</span>
+                <br><br>
+                <button onclick="AggProducto()">Añadir al carrito</button>
+            </div>
+    
+            
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin: 20px;">
+            <button style="cursor: pointer; padding: 10px 20px;  "  ;  onclick="siguiente()">Siguiente</button>
+        </div>
+        
+    </main>
+    <div id="footer"></div>
+    <script src="header_footer/conn.js"></script>   
+</body>
+</html>

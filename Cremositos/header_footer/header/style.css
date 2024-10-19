@@ -1,0 +1,61 @@
+header{
+    display: flex;
+    min-height: 13vh;
+    gap: 1.2%;
+    background-color: #003300;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img {  
+    display: flex; 
+    height: 50px;
+    box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.897); 
+    background-color: hsl(120, 94%, 45%); 
+    align-items: center;
+    
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 50px; /* Ajusta según la posición de tu logo */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 5px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+}
+
+.menu ul li a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+header .slogan{
+    flex-basis: 90%;
+    color: rgb(255, 255, 255);
+    text-align: end;
+    
+}
