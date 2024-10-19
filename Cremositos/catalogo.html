@@ -6,7 +6,7 @@
     <title>Catálogo de Productos</title>
     <link rel="stylesheet" href="css/stylesCatalogo.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="botones.js"></script>
+    <script src="../Cremositos/js/botones.js"></script>
 
 </head>
 <body>
@@ -32,7 +32,7 @@
                 <hr>
                 <span>$2,000</span>
                 <br><br>
-                <button id="producto" onclick="AggProducto()">Añadir al carrito</button>
+                <button id="producto" onclick="AggProducto('Maracu-Mango', 1, 2000)">Añadir al carrito</button>
             </div>
     
             <!-- Producto 3 -->
@@ -42,13 +42,13 @@
                 <hr>
                 <span>$2,000</span>
                 <br><br>
-                <button onclick="AggProducto()">Añadir al carrito</button>
+                <button onclick="AggProducto('Oreo', 1, 2000)">Añadir al carrito</button>
             </div>
     
             
         </div>
-        <div style="display: flex; justify-content: flex-end; margin: 20px;">
-            <button style="cursor: pointer; padding: 10px 20px;  "  ;  onclick="siguiente()">Siguiente</button>
+        <div class="contBoton">
+            <button onclick="siguiente()">Siguiente</button>
         </div>
         
     </main>

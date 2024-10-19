@@ -31,7 +31,13 @@ function AggProducto(nombreProducto, cantidad, precio) {
     carrito.push(producto);
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 
-    console.log("Producto añadido:", producto); // Para verificar en consola
     alert('Producto añadido al carrito ' + nombreProducto+' '+ precio+ ' '+cantidad);
 }
 
+function siguiente() {
+    window.location.href = "Pedido.html";
+}
+
+function irCatalogo() {
+    window.location.href = "catalogo.html";
+}
