@@ -6,29 +6,12 @@
     <title>Pedido</title>
     <link rel="stylesheet" href="css/stylesPedido.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/botones.js"></script>
+
 </head>
-<body>
+<body class="fondo">
     <div id="header"></div>
     <main>
-        <script>
-            window.onload = function() {
-                // Obtener el carrito de sessionStorage
-                let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-                
-                // Seleccionar el cuerpo de la tabla donde se agregarán los productos
-                const carritoBody = document.getElementById('carritoBody');
-                
-                // Recorrer el carrito y agregar cada producto como una fila en la tabla
-                carrito.forEach(producto => {
-                    let row = `<tr>
-                        <td>${producto.nombre}</td>
-                        <td>${producto.cantidad}</td>
-                        <td>$${producto.precio}</td>
-                    </tr>`;
-                    carritoBody.innerHTML += row;
-                });
-            };
-            </script>
         <table id="tablaCarrito" border="1">
             <thead>
                 <tr>
@@ -40,11 +23,15 @@
             <tbody id="carritoBody">
                 <!-- Las filas de productos se agregarán aquí -->
             </tbody>
+            <tfoot>
+                <tr class="footer-row">
+                    <td colspan="2">Total de la compra:</td>
+                    <td id="costoTotal">$0.00</td>
+                </tr>
+            </tfoot>
         </table>
-        
     </main>
     <div id="footer"></div>
     <script src="header_footer/conn.js"></script>
 </body>
-
 </html>
