@@ -68,8 +68,9 @@ function validarUsuario(usuario, contrasena) {
     }
 }
 
-function ingresarComoInvitado() {
+function ingresarComoInvitado() {   
     window.location.href = "../Cremositos/inicio.html";
+    localStorage.setItem('ingresarComoInvitado');
 }
 
 

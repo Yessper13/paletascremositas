@@ -39,7 +39,13 @@ function siguiente() {
 }
 
 function irCatalogo() {
-    window.location.href = "catalogo.html";
+    if(localStorage.getItem('ingresoComoInvitado')==='true'){
+        window.location.href ="../Cremositos/formulario.html";  
+    }
+    else{
+         window.location.href = "catalogo.html"; 
+    }
+    
 }
 
 function GuardarCompra() {
