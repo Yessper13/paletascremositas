@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="../Cremositos/css/styles.css">
+    <link rel="stylesheet" href="../Cremositos/css/stylesPerfil.css">
+    <script src="js/PerfilUs.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+        <nav class="navbar">
+            <h1>Perfil de Usuario</h1>
+            <button onclick="logout()">Cerrar sesión</button>
+        </nav>
+
+
+    <main class="perfil-contenido">
+        <!-- Sección de información personal -->
+        <section class="informacion-usuario">
+            <h2>Información Personal</h2>
+            <p><strong>Nombre:</strong> Juan Pérez</p>
+            <p><strong>Email:</strong> juan.perez@example.com</p>
+            <p><strong>Teléfono:</strong> +57 300 123 4567</p>
+        </section>
+
+        <!-- Sección de ventas guardadas -->
+        <section class="ventas-guardadas">
+            <h2>Ventas Guardadas</h2>
+            <div id="ventasGuardadas">
+                <p>No hay ventas guardadas.</p>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="header_footer/conn.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar button {
+    background-color: #ff4b5c;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #ff1f3b;
+}
+
+/* Contenido del perfil */
+.perfil-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.informacion-usuario, .ventas-guardadas {
+    width: 80%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.informacion-usuario h2, .ventas-guardadas h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.informacion-usuario p, .ventas-guardadas p {
+    font-size: 16px;
+    margin: 5px 0;
+}

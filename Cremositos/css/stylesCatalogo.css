@@ -4,6 +4,11 @@
 }
 body {
     font-family: Arial, sans-serif;
+    background-image: url('ruta/de/tu/imagen/fondo.jpg'); /* Reemplaza con la ruta de tu imagen de fondo */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
 }
 
 .logo img {  
@@ -14,8 +19,10 @@ body {
     align-items: center;
     
 }
-main{
+main {
     padding: 50px;
+    overflow-y: auto; /* Habilita el desplazamiento solo para el catálogo */
+    max-height: 100vh; /* Ajusta la altura para que ocupe la pantalla */
 }
 .catalogo {
     display: flex;
@@ -77,13 +84,24 @@ main{
 }
 
 
-.contBoton{
-    display: flex; 
-    justify-content: flex-end; 
-    margin: 20px;
+.contBoton {
+    display: flex;
+    justify-content: center; /* Centrado del contenedor */
+    margin-top: 20px;
 }
 
-.contBoton button{
-    cursor: pointer; 
+.contBoton button {
+    cursor: pointer;
     padding: 10px 20px;
+    background-color: rgba(71, 158, 12, 0.8);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 20px 11px rgba(255, 255, 255, 0.7),
+                1px 0px 20px 13px rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+    background-color: rgb(84, 240, 12);
+    color: black;
 }

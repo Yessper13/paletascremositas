@@ -42,6 +42,20 @@ function irCatalogo() {
     window.location.href = "catalogo.html";
 }
 
+function GuardarCompra() {
+    let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    let ventasGuardadas = JSON.parse(localStorage.getItem('ventasGuardadas')) || [];
+
+    // Agregar el carrito actual a las ventas guardadas
+    ventasGuardadas.push(carrito);
+
+    // Guardar las ventas en localStorage
+    localStorage.setItem('ventasGuardadas', JSON.stringify(ventasGuardadas));
+
+    // Limpiar el carrito después de guardar
+    sessionStorage.removeItem('carrito');
+    alert('Compra guardada exitosamente');
+}
 
 
 window.onload = function() {
@@ -113,3 +127,6 @@ window.onload = function() {
     // Inicializar el costo total al cargar
     actualizarCostoTotal();
 };
+
+
+

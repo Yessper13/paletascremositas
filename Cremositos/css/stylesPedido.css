@@ -2,30 +2,31 @@
     font-family: font1;
     src: url(font/Fashion\ Fetish\ Outline.ttf);
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9; /* Fondo para mejorar contraste */
 }
 
 .logo img {  
-    display: flex; 
     height: 50px;
-    box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.897); 
-    background-color: hsl(120, 94%, 45%); 
-    align-items: center;
+    box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.9); 
+    background-color: hsl(120, 94%, 45%);
 }
 
+/* Contenedor principal */
 main {
     min-height: 70vh;
     padding: 50px;
     width: 100%;
 }
 
+/* Tabla de carrito */
 #tablaCarrito {
-    width: 50%; /* Ancho de la tabla ajustado */
+    width: 60%; /* Ancho de la tabla ajustado */
     margin: 30px auto; /* Centrado automático */
     border-collapse: collapse;
-    box-shadow: 10px 10px 10px 10px rgba(2, 82, 2, 0.658);
+    box-shadow: 10px 10px 10px rgba(2, 82, 2, 0.65);
     background-color: white;
 }
 
@@ -34,13 +35,13 @@ main {
 }
 
 #tablaCarrito th, #tablaCarrito td {
-    padding: 12px; /* Consistencia en el espaciado */
+    padding: 12px;
     text-align: center;
-    font-size: 1em; /* Tamaño de fuente estándar */
+    font-size: 1em;
 }
 
 #tablaCarrito th {
-    background-color: #4CAF50; /* Color de fondo del encabezado */
+    background-color: #4CAF50;
     color: white;
     font-weight: bold;
 }
@@ -50,8 +51,7 @@ main {
 }
 
 #tablaCarrito tbody tr:hover {
-    background-color: #0ece3e; /* Color de fondo al pasar el mouse */
-    
+    background-color: #0ece3e;
 }
 
 /* Estilo para el input de cantidad */
@@ -59,7 +59,6 @@ main {
     width: 60px;
     text-align: center;
     border: none;
-
     font-size: 16px;
     color: #000000;
 }
@@ -70,15 +69,15 @@ main {
 }
 
 /* Estilo para la celda de valor total */
- .precioTotal {
+.precioTotal {
     font-weight: bold;
     color: #4CAF50;
-    transition: color 0.3s ease; /* Transición suave */
-} 
+    transition: color 0.3s ease;
+}
 
 .precioTotal:hover {
-    color: #000000; /* Color más oscuro al pasar el mouse */
-    cursor: pointer; /* Cambia el cursor a puntero para indicar que es interactivo */
+    color: #000000;
+    cursor: pointer;
 }
 
 /* Estilo para el footer de la tabla */
@@ -97,46 +96,26 @@ main {
     font-weight: bold;
 }
 
-/* Estilo para el botón del producto */
-.producto button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.producto button:hover {
-    background-color: #218838;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+.contBoton {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    color: #fff;
-    background-color: #32CD32;
-    box-shadow: 0 0 20px 15px rgba(50, 205, 50, 0.8);
-    align-items: top;
+    justify-content: center; /* Centrado del contenedor */
+    margin-top: 20px;
+    gap: 2%;
 }
 
-footer .contact-info a {
-    color: #000000;
-    margin-right: 15px;
-    text-decoration: none;   
+.contBoton button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(71, 158, 12, 0.8);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 20px 11px rgba(255, 255, 255, 0.7),
+                1px 0px 20px 13px rgba(255, 255, 255, 0.5);
 }
 
-footer .contact-info img {
-    width: 40px;  
+button:hover {
+    background-color: rgb(84, 240, 12);
+    color: black;
 }
 
-footer .TPrecentacion p {
-    border: #fff;
-    color: #000000;
-    margin: 0;
-}
