@@ -1,0 +1,22 @@
+@font-face {
+    font-family: font1;
+    src: url(font/Fashion\ Fetish\ Outline.ttf);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Fondo para mejorar contraste */
+}
+
+.logo img {  
+    height: 50px;
+    box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.9); 
+    background-color: hsl(120, 94%, 45%);
+}
+
+/* Contenedor principal */
+main {
+    min-height: 70vh;
+    padding: 50px;
+    width: 100%;
+}

@@ -1,3 +1,16 @@
+function siguiente() {
+    window.location.href = "Pedido.html";
+}
+
+function irCatalogo() {
+    if (localStorage.getItem('ingresoComoInvitado') === 'true' && localStorage.getItem('formularioMostrado') === 'false') {
+        alert('Por favor llena el formulario con tus datos para tenerlos presente para realizar el domicilio');
+        window.location.href = "../Cremositos/formulario.html";  
+        localStorage.setItem('formularioMostrado', 'true'); // Marca que el formulario ya ha sido mostrado
+    } else {
+        window.location.href = "catalogo.html"; 
+    }
+}
 function enviarForm(){
     document.forms[0].submit();  // Envía el primer formulario de la página
 }
@@ -19,48 +32,57 @@ function validarFormulario() {
     window.location.href = "catalogo.html";
     return false;
 }
+function incrementarCantidad(nombreProducto, idCantidad, precio) {
+    // Obtener el campo de entrada de cantidad correspondiente
+    let cantidadInput = document.getElementById(idCantidad);
 
-function AggProducto(nombreProducto, cantidad, precio) {
+    // Verificar que el valor de la cantidad sea un número válido
+    let cantidad = parseInt(cantidadInput.value);
+    if (isNaN(cantidad) || cantidad <= 0) {
+        cantidad = 0; // Si la cantidad no es válida, ponerla a 0
+    }
+
+    // Incrementar el valor de la cantidad
+    cantidadInput.value = cantidad + 1;
+
+    // Llamar a la función AggProducto con el nombre, cantidad y precio actualizados
+    AggProducto(nombreProducto, idCantidad, precio);
+}
+
+function AggProducto(nombreProducto, idCantidad, precio) {
+    // Obtener la cantidad del producto
+    const cantidadInput = document.getElementById(idCantidad);
+    let cantidad = parseInt(cantidadInput.value);
+
+    // Validar que la cantidad sea un número válido y mayor que cero
+    if (isNaN(cantidad) || cantidad <= 0) {
+        alert('Por favor ingresa una cantidad válida.');
+        return;
+    }
+
+    // Crear el objeto del producto
     const producto = {
         nombre: nombreProducto,
         cantidad: cantidad,
         precio: precio
     };
-    
+
+    // Obtener el carrito de sesión
     let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-    carrito.push(producto);
+
+    // Comprobar si el producto ya está en el carrito
+    let productoExistente = carrito.find(item => item.nombre === nombreProducto);
+    
+    if (productoExistente) {
+        // Si el producto ya está en el carrito, actualizar la cantidad
+        productoExistente.cantidad += cantidad;
+    } else {
+        // Si el producto no está en el carrito, agregarlo
+        carrito.push(producto);
+    }
+
+    // Guardar el carrito actualizado en sessionStorage
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
-
-    alert('Producto añadido al carrito ' + nombreProducto+' '+ precio+ ' '+cantidad);
-}
-
-function siguiente() {
-    window.location.href = "Pedido.html";
-}
-
-function irCatalogo() {
-    if(localStorage.getItem('ingresoComoInvitado')==='true'){
-        window.location.href ="../Cremositos/formulario.html";  
-    }
-    else{
-         window.location.href = "catalogo.html"; 
-    }
-    
-}
-
-function GuardarCompra() {
-    let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-    let ventasGuardadas = JSON.parse(localStorage.getItem('ventasGuardadas')) || [];
-
-    // Agregar el carrito actual a las ventas guardadas
-    ventasGuardadas.push(carrito);
-
-    // Guardar las ventas en localStorage
-    localStorage.setItem('ventasGuardadas', JSON.stringify(ventasGuardadas));
-
-    // Limpiar el carrito después de guardar
-    sessionStorage.removeItem('carrito');
-    alert('Compra guardada exitosamente');
 }
 
 
@@ -133,6 +155,30 @@ window.onload = function() {
     // Inicializar el costo total al cargar
     actualizarCostoTotal();
 };
+
+function GuardarCompra() {
+    let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    let ventasGuardadas = JSON.parse(localStorage.getItem('ventasGuardadas')) || [];
+
+    // Agregar la fecha de la compra al carrito
+    const fechaActual = new Date().toISOString(); // Guardar la fecha en formato ISO
+    carrito.forEach(producto => {
+        producto.fechaCompra = fechaActual;
+    });
+
+    // Agregar el carrito actual a las ventas guardadas
+    ventasGuardadas.push(carrito);
+
+    // Guardar las ventas en localStorage
+    localStorage.setItem('ventasGuardadas', JSON.stringify(ventasGuardadas));
+
+    // Limpiar el carrito después de guardar
+    sessionStorage.removeItem('carrito');
+    alert('Compra guardada exitosamente');
+    window.location.href = "perfilUsrio.html"; 
+}
+
+
 
 
 

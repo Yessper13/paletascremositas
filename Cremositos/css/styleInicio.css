@@ -1,50 +1,30 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
-html{
+
+html {
     font-size: 20px;
     font-family: 'font1';
     width: 100%;
     height: 100%;
-    
 }
-body{       
-    margin: 5px;   
+
+body {
+    margin: 5px;
 }
-main{
-    min-height: 100vh;
-    padding: 40px ; 
+
+main {
+    min-height: auto;
+    margin-top: 50px;
+    padding: 0 10% ;
     display: flex;
-    gap: 1%;    
+    gap: 1%;
     justify-content: center;
     flex-wrap: wrap;
 }
-
-
-.contenedor1{
-
-    width: 100%;
-    height: 30%;
-    display: flex;
-    overflow: hidden;
-    margin-bottom: 50px;
-    justify-content: space-around;
-    align-items: center;
-    gap: 7%;
-    padding: 0 20px;
-    flex-wrap: nowrap;
-} 
-
-.slider {
-    display: flex;
-    gap: 20px; 
-    animation: deslizar 15s linear infinite; 
-}
-
-main .contenedor1 img{
+main .contenedor1 img {
     width: 30%;
     flex-shrink: 0;
     display: flex;
@@ -56,40 +36,171 @@ main .contenedor1 img{
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); 
+        transform: translateX(-100%);
     }
 }
+.contenedor1 {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 50px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 7%;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+}
 
-main .contenedor2{
-    padding: 20px;
-    background-color: rgb(84, 240, 12);
+.slider {
+    display: flex;
+    gap: 20px;
+    animation: deslizar 15s linear infinite;
+}
+.contenedor2 {
+    min-height: 25vh;
+  
+    display: flex;
+    background-color: #06e906;
+    box-shadow: 0px 0px 20px 13px #06e906;
     justify-content: center;
     align-items: center;
+    gap: 2%;
 }
-main .contenedor2 h2, p{
+
+.contenedor2 h2, p {
     justify-content: center;
     align-items: center;
-    text-align: center; 
-    
+    text-align: center;
 }
-
-.contBoton{
-    display: flex; 
-    justify-content: flex-end; 
-    margin: 20px;
+.lef{
+    width: auto;
+    min-height: 20vh;
 }
+aside.right {
 
-.contBoton button {
+    padding: 15px;
+    background-color: #ccf5c7;
+    color: black;
+    min-height: 20vh;
+    width: 50%;
+}
+.accordion {
+
+    background-color: #ccf5c7;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.2s;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 15px;
+    display: none;
+    background-color: #f9f9f97a;
+    overflow: hidden;
+}
+
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 900px) {
+    .accordion {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    aside.right {
+        width: 80%;
+        min-height: auto;
+    }
+    .contenedor2 {
+        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+.Boton {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.Boton button {
+    cursor: pointer;
+    width: 15vh;
+    height: 5vh;
     background-color: rgba(71, 158, 12, 0.815);
     color: white;
     border: none;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 20px 11px rgb(255, 255, 255),
-                      1px 0px 20px 13px rgb(255 255 255);
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 20px 11px rgba(65, 151, 53, 0.829),
+                1px 0px 20px 13px rgb(255 255 255);
 }
+
 button:hover {
     background-color: rgb(84, 240, 12);
     color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .contenedor1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    main .contenedor1 img {
+        width: 80%;
+    }
+    .Boton button {
+        width: 12vh; /* Reducir el ancho */
+        height: 4vh; /* Reducir la altura */
+        font-size: 14px; /* Ajustar el tamaño de la fuente */
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 16px;
+    }
+
+    .contenedor1 {
+        gap: 10px;
+    }
+
+    .slider {
+        gap: 10px;
+    }
+
+    main .contenedor1 img {
+        width: 100%;
+    }
+
+    .contBoton button {
+        padding: 8px 16px;
+    }
+    .Boton button {
+        width: 10vh; /* Reducir aún más el ancho */
+        height: 3.5vh; /* Reducir la altura */
+        font-size: 12px; /* Ajustar el tamaño de la fuente */
+        border-radius: 10px; /* Ajustar el borde */
+    }
 }

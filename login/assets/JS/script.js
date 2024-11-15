@@ -61,16 +61,27 @@ function iniciarSesion(){
 }
 
 function validarUsuario(usuario, contrasena) {
+    // Limpiar el localStorage antes de hacer la validación, si es necesario
+    localStorage.clear(); // Limpiar cualquier valor previo almacenado
+    
     if (usuario === "prueba" && contrasena === "123") {
+        localStorage.setItem('ingresoComoInvitado', 'false'); // Indica que es un usuario autenticado
+        localStorage.setItem('formularioMostrado', 'false'); // Resetea el estado de formulario
+        localStorage.setItem('MostrarPerfil', 'true');
         window.location.href = "../Cremositos/inicio.html";
     } else {
         alert("Usuario o contraseña incorrectos");
     }
 }
 
-function ingresarComoInvitado() {   
+function ingresarComoInvitado() {
+    // Limpiar el localStorage antes de hacer el ingreso como invitado
+    localStorage.clear(); // Limpiar cualquier valor previo almacenado
+    
+    localStorage.setItem('ingresoComoInvitado', 'true'); // Indica que es un invitado
+    localStorage.setItem('formularioMostrado', 'false'); // Marca que el formulario aún no ha sido mostrado
+    localStorage.setItem('MostrarPerfil', 'false');
     window.location.href = "../Cremositos/inicio.html";
-    localStorage.setItem('ingresarComoInvitado');
 }
 
 

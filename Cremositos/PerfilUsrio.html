@@ -4,36 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="../Cremositos/css/styles.css">
     <link rel="stylesheet" href="../Cremositos/css/stylesPerfil.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script src="js/PerfilUs.js"></script>
+    <script src="js/botones.js"></script>
 </head>
 <body>
     <div id="header"></div>
+    <main>
+        <div class="fondo"></div>
+        <hr>
+        <h3>Perfil de Usuario</h3>
+        <div class="perfil-contenido">
+            <!-- Sección de información personal -->
+            <section class="informacion-usuario">
+                <h2>Información Personal</h2>
+                <p><strong>Nombre:</strong> Juan Pérez</p>
+                <p><strong>Email:</strong> juan.perez@example.com</p>
+                <p><strong>Teléfono:</strong> +57 300 123 4567</p>
+            </section>
 
-        <nav class="navbar">
-            <h1>Perfil de Usuario</h1>
-            <button onclick="logout()">Cerrar sesión</button>
-        </nav>
+            <!-- Sección de ventas guardadas -->
+            <section class="ventas-guardadas" id="ventasGuardadas">
+                <h2>Ventas Guardadas</h2>
+                <div id="ventasGuardadas">
+                    <!-- Aquí se mostrarán las ventas guardadas dinámicamente -->
+                    <p>No hay ventas guardadas.</p>
+                </div>
+            </section>
 
-
-    <main class="perfil-contenido">
-        <!-- Sección de información personal -->
-        <section class="informacion-usuario">
-            <h2>Información Personal</h2>
-            <p><strong>Nombre:</strong> Juan Pérez</p>
-            <p><strong>Email:</strong> juan.perez@example.com</p>
-            <p><strong>Teléfono:</strong> +57 300 123 4567</p>
-        </section>
-
-        <!-- Sección de ventas guardadas -->
-        <section class="ventas-guardadas">
-            <h2>Ventas Guardadas</h2>
-            <div id="ventasGuardadas">
-                <p>No hay ventas guardadas.</p>
+            <!-- Botón para generar el PDF -->
+            <div class="pdf-section">
+                <button onclick="irCatalogo()">Ir a catalogo</button>
+                <button onclick="generarPDF()">Generar PDF</button>             
             </div>
-        </section>
+        </div>
     </main>
+
     <div id="footer"></div>
     <script src="header_footer/conn.js"></script>
 </body>

@@ -1,21 +1,42 @@
-
-<header>
-    <div class="logo">
-        <img src="imagen/logoPaleta.png" alt="Logo" id="menuIcon">
-        <div class="menu" id="dropdownMenu">
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="formulario.html">Formulario de Pedido</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="Pedido.html">Pedidos</a></li>
-                <li><a href="contact.html">Contactos</a></li>
-                <li><a href="PerfilUsrio.html">Perfil Usuario</a></li>
-            </ul>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagen/logoPaleta.png" alt="Logo" id="menuIcon">
         </div>
-    </div>
-    <div class="slogan">
-        <h1>Cremositos <span>Frutales</span></h1>
-    </div>
-    <script src="js/menu.js"></script>
-    
-</header>
+        <div class="slogan">
+            <h1>Cremositos <span>Frutales</span></h1>
+            <!-- Enlace del perfil, oculto inicialmente -->
+            <a style="color: white; text-decoration: none;" href="../Cremositos/PerfilUsrio.html" id="perfilNav" style="display:none;">Perfil</a>
+            <!-- Enlace para iniciar sesión, visible cuando no se está autenticado -->
+            <a style="color: white; text-decoration: none;" href="/login/login.html" id="iniciarSesionLink">Inicio sesión</a>
+            <a style="color: white; text-decoration: none;" href="../Cremositos/contactos.html">Contactos</a>
+            <a style="color: white; text-decoration: none;" href="../Cremositos/inicio.html">Inicio</a>
+        </div>
+    </header>
+
+    <script>
+        // Al cargar la página, verificamos si el usuario ha iniciado sesión o está como invitado
+        window.onload = function() {
+            // Obtener los valores del localStorage
+            const ingresoComoInvitado = localStorage.getItem('ingresoComoInvitado');
+            const mostrarPerfil = localStorage.getItem('MostrarPerfil');
+            const perfilNav = document.getElementById('perfilNav');
+            const iniciarSesionLink = document.getElementById('iniciarSesionLink');
+
+            // Lógica para mostrar u ocultar los enlaces según el estado del usuario
+            if (ingresoComoInvitado === 'true') {
+                // Si es un invitado, ocultamos ambos el enlace de perfil y el de inicio sesión
+                perfilNav.style.display = 'none';
+                iniciarSesionLink.style.display = 'none';
+            } else if (mostrarPerfil === 'true') {
+                // Si el usuario ha iniciado sesión y tiene perfil, mostramos el enlace de perfil
+                perfilNav.style.display = 'block';
+                iniciarSesionLink.style.display = 'none';
+            } else {
+                // Si no está autenticado, mostramos el enlace de iniciar sesión
+                perfilNav.style.display = 'none';
+                iniciarSesionLink.style.display = 'block';
+            }
+        }
+    </script>
+</body>

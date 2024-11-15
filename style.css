@@ -21,21 +21,7 @@ body {
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     z-index: -1;
-}
-/* .fondo {
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background-image: '../';
-    background: linear-gradient(45deg, #0ecfbf, #00FF77, #00c96b, #027a20);
-    background-size: 400% 400%;
-    animation: moveBackground 20s ease infinite;
-    z-index: -1;
-} */
-
+} 
 @keyframes moveBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }

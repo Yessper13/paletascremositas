@@ -25,9 +25,11 @@ main {
     max-height: 100vh; /* Ajusta la altura para que ocupe la pantalla */
 }
 .catalogo {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;  /* Centrado horizontal */
 }
 
 
@@ -43,17 +45,15 @@ main {
     text-align: center;
     background-color: rgba(200, 255, 0, 0.452);
 }
-/* caja_trasera{
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(5, 1, 26, 0.158);
-    border-radius: 30px;
-    border: #fff;
-} */
+
+.producto input[type="number"] {
+    width: 50px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
 .producto img {
     height: 200px;
     width: 200px;
