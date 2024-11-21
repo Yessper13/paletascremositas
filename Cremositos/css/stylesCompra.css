@@ -1,13 +1,18 @@
+/* Fuente personalizada */
 @font-face {
     font-family: font1;
-    src: url(font/Fashion\ Fetish\ Outline.ttf);
+    src: url("font/Fashion Fetish Outline.ttf");
 }
 
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Fondo para mejorar contraste */
+    background-color: #f9f9f9; /* Fondo claro para mejor contraste */
+    margin: 0;
+    padding: 0;
 }
 
+/* Estilos del logo */
 .logo img {  
     height: 50px;
     box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.9); 
@@ -16,7 +21,79 @@ body {
 
 /* Contenedor principal */
 main {
+    display: flex;
+    flex-direction: column; /* Apilado por defecto */
     min-height: 70vh;
-    padding: 50px;
+    padding: 20px;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centrado del texto */
+}
+
+main img {
+    width: 100%;
+    max-width: 300px; /* Limitar el ancho máximo */
+    padding-bottom: 10%;
+}
+
+/* Estilos del formulario */
+.formComprobante {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px; /* Limitar el ancho del formulario */
+}
+
+.comprobante {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#comprobante {
+    margin-bottom: 15px;
+    width: 100%; /* Asegurar que ocupe todo el espacio */
+    max-width: 300px;
+    padding: 8px;
+}
+
+/* Botón guardar */
+.btn-guardar {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px; /* Limitar ancho del botón */
+}
+
+/* Responsivo: pantallas medianas */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row; /* Cambiar a formato de filas */
+    }
+
+    .formComprobante {
+        margin-top: 0;
+        margin-left: 20px; /* Añadir espacio al lado del formulario */
+    }
+
+    main img {
+        padding-bottom: 0;
+    }
+}
+
+/* Responsivo: pantallas pequeñas */
+@media (max-width: 480px) {
+    .btn-guardar {
+        padding: 8px 15px;
+        font-size: 14px; /* Reducir tamaño del texto */
+    }
+
+    #comprobante {
+        padding: 6px;
+    }
 }

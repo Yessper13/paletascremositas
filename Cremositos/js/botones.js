@@ -178,7 +178,9 @@ function GuardarCompra() {
     window.location.href = "perfilUsrio.html"; 
 }
 
-
+function Comprar(){
+    window.location.href = "Compra.html"; 
+}
 
 
 

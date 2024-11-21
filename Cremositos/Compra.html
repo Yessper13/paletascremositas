@@ -7,14 +7,49 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/stylesCompra.css">
     <script src="js/botones.js"></script>
+    <script src="js/ComprovantePago.js"></script>
 </head>
 <body class="fondo">
     <div id="header"></div>
     
     <main>
-
+        <!-- Formulario para subir y guardar comprobante -->
+        <form class="formComprobante">
+            <img src="imagen/QR-Pago.jpeg" alt="QR para pago">
+            
+            <label for="comprobante" class="comprobante">Subir comprobante de pago:</label>           
+            <input type="file" id="comprobante" accept=".jpg,.jpeg,.png,.pdf" required>
+            
+            <button type="button" id="guardarComprobante" class="btn-guardar">Guardar Comprobante</button>
+        </form>
     </main>
-    
+    <script>
+        document.getElementById('guardarComprobante').addEventListener('click', function () {
+            const fileInput = document.getElementById('comprobante');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Por favor, selecciona un comprobante para guardar.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const blob = new Blob([e.target.result], { type: file.type });
+                const url = URL.createObjectURL(blob);
+
+                // Crear enlace para descargar
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = file.name; // Mantiene el nombre original del archivo
+                a.click();
+
+                // Limpiar memoria
+                URL.revokeObjectURL(url);
+            };
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
     <div id="footer"></div>
     <script src="header_footer/conn.js"></script>   
 </body>
