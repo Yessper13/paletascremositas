@@ -1,3 +1,6 @@
+function login(){
+    window.location.href = "Cremositos/login.html";
+}
 function siguiente() {
     window.location.href = "Pedido.html";
 }
@@ -118,6 +121,9 @@ window.onload = function() {
             total += productosAgrupados[nombre].cantidad * productosAgrupados[nombre].precioUnitario;
         }
         costoTotalElem.textContent = `$${total.toFixed(2)}`;
+    
+        // Guardar el total en sessionStorage
+        sessionStorage.setItem('costoTotalCompra', total.toFixed(2));
     }
 
     // Recorrer el objeto de productos agrupados y agregar cada producto como una fila en la tabla
@@ -160,22 +166,42 @@ function GuardarCompra() {
     let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
     let ventasGuardadas = JSON.parse(localStorage.getItem('ventasGuardadas')) || [];
 
-    // Agregar la fecha de la compra al carrito
-    const fechaActual = new Date().toISOString(); // Guardar la fecha en formato ISO
-    carrito.forEach(producto => {
-        producto.fechaCompra = fechaActual;
-    });
+    // Obtener el comprobante (asumiendo que ya lo has guardado en el carrito o el comprobante es parte de la compra)
+    const fileInput = document.getElementById('comprobante');
+    const file = fileInput ? fileInput.files[0] : null;
 
-    // Agregar el carrito actual a las ventas guardadas
-    ventasGuardadas.push(carrito);
+    if (file) {
+        // Guardar el comprobante en el carrito
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const blob = new Blob([e.target.result], { type: file.type });
+            const url = URL.createObjectURL(blob);
+            carrito.forEach(producto => {
+                producto.comprobanteUrl = url;  // Asignamos el URL del comprobante al carrito
+            });
 
-    // Guardar las ventas en localStorage
-    localStorage.setItem('ventasGuardadas', JSON.stringify(ventasGuardadas));
+            // Agregar la fecha de la compra al carrito
+            const fechaActual = new Date().toISOString();
+            carrito.forEach(producto => {
+                producto.fechaCompra = fechaActual;
+            });
 
-    // Limpiar el carrito después de guardar
-    sessionStorage.removeItem('carrito');
-    alert('Compra guardada exitosamente');
-    window.location.href = "perfilUsrio.html"; 
+            // Agregar el carrito con el comprobante a las ventas guardadas
+            ventasGuardadas.push(carrito);
+
+            // Guardar las ventas en localStorage
+            localStorage.setItem('ventasGuardadas', JSON.stringify(ventasGuardadas));
+
+            // Limpiar el carrito después de guardar
+            sessionStorage.removeItem('carrito');
+            alert('Compra guardada exitosamente');
+            window.location.href = "perfilUsrio.html"; 
+        };
+
+        reader.readAsArrayBuffer(file);
+    } else {
+        alert('Por favor, selecciona un comprobante antes de guardar la compra.');
+    }
 }
 
 function Comprar(){

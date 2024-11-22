@@ -1,88 +1,66 @@
-/* Fuente personalizada */
-@font-face {
-    font-family: font1;
-    src: url("font/Fashion Fetish Outline.ttf");
-}
-
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Fondo claro para mejor contraste */
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilos del logo */
-.logo img {  
-    height: 50px;
-    box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.9); 
-    background-color: hsl(120, 94%, 45%);
-}
-
-/* Contenedor principal */
 main {
     display: flex;
-    flex-direction: column; /* Apilado por defecto */
-    min-height: 70vh;
-    padding: 20px;
-    width: 100%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Centrado del texto */
+    padding: 20px;
+    gap: 20px; /* Espaciado entre los elementos */
+    min-height: 80vh; /* Ocupa el 80% del alto de la pantalla */
 }
 
 main img {
     width: 100%;
-    max-width: 300px; /* Limitar el ancho máximo */
-    padding-bottom: 10%;
+    max-width: 200px; /* Ajustar el ancho del QR */
+    height: auto;
+    overflow-y: auto;
 }
 
-/* Estilos del formulario */
+.compra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
 .formComprobante {
     text-align: center;
-    margin-top: 20px;
+    padding: 10px;
     width: 100%;
-    max-width: 400px; /* Limitar el ancho del formulario */
+    max-width: 30%; 
+    background-color: rgba(5, 1, 26, 0.158);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .comprobante {
     display: block;
-    margin-bottom: 10px;
+    margin: 10px 0;
     color: white;
 }
 
 #comprobante {
-    margin-bottom: 15px;
-    width: 100%; /* Asegurar que ocupe todo el espacio */
-    max-width: 300px;
+    margin: 10px 0 20px;
+    width: 100%;
+    max-width: 300px; /* Limitar ancho */
     padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Botón guardar */
-.btn-guardar {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 150px; /* Limitar ancho del botón */
+.botones{
+    display: flex;
+    gap: 2%;
 }
 
 /* Responsivo: pantallas medianas */
 @media (min-width: 768px) {
     main {
-        flex-direction: row; /* Cambiar a formato de filas */
+        gap: 30px;
     }
 
-    .formComprobante {
-        margin-top: 0;
-        margin-left: 20px; /* Añadir espacio al lado del formulario */
-    }
-
-    main img {
-        padding-bottom: 0;
+    .compra {
+        margin-bottom: 30px;
     }
 }
 
@@ -90,7 +68,7 @@ main img {
 @media (max-width: 480px) {
     .btn-guardar {
         padding: 8px 15px;
-        font-size: 14px; /* Reducir tamaño del texto */
+        font-size: 14px;
     }
 
     #comprobante {

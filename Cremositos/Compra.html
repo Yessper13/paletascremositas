@@ -7,50 +7,33 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/stylesCompra.css">
     <script src="js/botones.js"></script>
-    <script src="js/ComprovantePago.js"></script>
+    <script src="js/actualizarCosto.js" defer></script>
 </head>
-<body class="fondo">
+<body>
     <div id="header"></div>
     
     <main>
+        <div class="fondo"></div>
+        <hr>
+        <div class="compra">
+            <h3>Total de la compra:</h3>
+            <h3 id="costoTotal" class="total-compra">$0.00</h3>
+        </div>
         <!-- Formulario para subir y guardar comprobante -->
         <form class="formComprobante">
             <img src="imagen/QR-Pago.jpeg" alt="QR para pago">
             
             <label for="comprobante" class="comprobante">Subir comprobante de pago:</label>           
             <input type="file" id="comprobante" accept=".jpg,.jpeg,.png,.pdf" required>
+            <div class="botones">
+                <button onclick="irCatalogo()">Ir a catalogo</button>    
+                <button onclick="GuardarCompra()">Guardar Compra</button>
+            </div>
             
-            <button type="button" id="guardarComprobante" class="btn-guardar">Guardar Comprobante</button>
         </form>
     </main>
-    <script>
-        document.getElementById('guardarComprobante').addEventListener('click', function () {
-            const fileInput = document.getElementById('comprobante');
-            const file = fileInput.files[0];
-
-            if (!file) {
-                alert('Por favor, selecciona un comprobante para guardar.');
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const blob = new Blob([e.target.result], { type: file.type });
-                const url = URL.createObjectURL(blob);
-
-                // Crear enlace para descargar
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = file.name; // Mantiene el nombre original del archivo
-                a.click();
-
-                // Limpiar memoria
-                URL.revokeObjectURL(url);
-            };
-            reader.readAsArrayBuffer(file);
-        });
-    </script>
     <div id="footer"></div>
     <script src="header_footer/conn.js"></script>   
 </body>
+
 </html>

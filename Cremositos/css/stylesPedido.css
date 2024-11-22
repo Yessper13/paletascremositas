@@ -98,24 +98,10 @@ main {
 
 .contBoton {
     display: flex;
-    justify-content: center; /* Centrado del contenedor */
+    justify-content: center;
     margin-top: 20px;
     gap: 2%;
 }
 
-.contBoton button {
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: rgba(71, 158, 12, 0.8);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 20px 11px rgba(255, 255, 255, 0.7),
-                1px 0px 20px 13px rgba(255, 255, 255, 0.5);
-}
 
-button:hover {
-    background-color: rgb(84, 240, 12);
-    color: black;
-}
 

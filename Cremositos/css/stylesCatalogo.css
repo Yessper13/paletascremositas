@@ -2,14 +2,6 @@
     font-family: font1;
     src: url(font/Fashion\ Fetish\ Outline.ttf); 
 }
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('ruta/de/tu/imagen/fondo.jpg'); /* Reemplaza con la ruta de tu imagen de fondo */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    
-}
 
 .logo img {  
     display: flex; 
@@ -93,16 +85,7 @@ main {
     margin-top: 20px;
 }
 
-.contBoton button {
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: rgba(71, 158, 12, 0.8);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 20px 11px rgba(255, 255, 255, 0.7),
-                1px 0px 20px 13px rgba(255, 255, 255, 0.5);
-}
+
 
 button:hover {
     background-color: rgb(84, 240, 12);

@@ -23,6 +23,7 @@ main {
     gap: 1%;
     justify-content: center;
     flex-wrap: wrap;
+    overflow-y: auto;
 }
 main .contenedor1 img {
     width: 30%;
@@ -107,7 +108,7 @@ aside.right {
 .panel {
     padding: 0 15px;
     display: none;
-    background-color: #f9f9f97a;
+    background-color: rgba(5, 1, 26, 0.158);
     overflow: hidden;
 }
 
@@ -130,30 +131,12 @@ aside.right {
         justify-content: space-between;
     }
 }
-.Boton {
+ .Boton {
     display: flex;
     justify-content: center;
     margin: 30px auto;
 }
 
-.Boton button {
-    cursor: pointer;
-    width: 15vh;
-    height: 5vh;
-    background-color: rgba(71, 158, 12, 0.815);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    box-shadow: inset 0px 0px 20px 11px rgba(65, 151, 53, 0.829),
-                1px 0px 20px 13px rgb(255 255 255);
-}
-
-button:hover {
-    background-color: rgb(84, 240, 12);
-    color: black;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     main {
         padding: 20px;
@@ -169,11 +152,6 @@ button:hover {
 
     main .contenedor1 img {
         width: 80%;
-    }
-    .Boton button {
-        width: 12vh; /* Reducir el ancho */
-        height: 4vh; /* Reducir la altura */
-        font-size: 14px; /* Ajustar el tamaño de la fuente */
     }
 }
 
@@ -194,13 +172,4 @@ button:hover {
         width: 100%;
     }
 
-    .contBoton button {
-        padding: 8px 16px;
-    }
-    .Boton button {
-        width: 10vh; /* Reducir aún más el ancho */
-        height: 3.5vh; /* Reducir la altura */
-        font-size: 12px; /* Ajustar el tamaño de la fuente */
-        border-radius: 10px; /* Ajustar el borde */
-    }
 }
