@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: sans-serif;
+    
 }
 
 body{
@@ -56,11 +56,11 @@ main{
 
 .caja_trasera div h3{
    font-weight: 400;
-   font-size: 26px;
+   font-size: 46px;
 }
 
 .caja_trasera div p{
-    font-size: 16px;
+    font-size: 36px;
     font-weight: 300;
 }
 
@@ -103,7 +103,7 @@ main{
 }
 
 .contenedor_login_register form h2{
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
     margin-bottom: 20px;
     color: rgb(14, 14, 146);
