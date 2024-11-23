@@ -1,4 +1,4 @@
-var acc = document.getElementsByClassName("accordion");
+var acc = document.getElementsByClassName("boton1");
 var rightAside = document.querySelector(".right"); // Selecciona el aside derecho
 
 for (var i = 0; i < acc.length; i++) {

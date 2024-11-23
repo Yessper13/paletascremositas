@@ -11,13 +11,10 @@ html {
     height: 100%;
 }
 
-body {
-    margin: 5px;
-}
-
 main {
     min-height: auto;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 0 10% ;
     display: flex;
     gap: 1%;
@@ -32,14 +29,7 @@ main .contenedor1 img {
     animation: deslizar 10s linear infinite;
 }
 
-@keyframes deslizar {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
+
 .contenedor1 {
     width: 100%;
     height: 30%;
@@ -49,24 +39,36 @@ main .contenedor1 img {
     justify-content: space-around;
     align-items: center;
     gap: 7%;
-    padding: 0 20px;
+    padding: 0 0px;
     flex-wrap: nowrap;
 }
-
+.contenedor1 img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+@keyframes deslizar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 .slider {
     display: flex;
     gap: 20px;
     animation: deslizar 15s linear infinite;
 }
 .contenedor2 {
-    min-height: 25vh;
-  
+    min-height: 4vh;
     display: flex;
-    background-color: #06e906;
-    box-shadow: 0px 0px 20px 13px #06e906;
+    padding: 0 10%;
+    background-color: #06e906ab;
+    box-shadow: 0px 0px 20px 13px #06e906bb;
     justify-content: center;
     align-items: center;
-    gap: 2%;
+    
 }
 
 .contenedor2 h2, p {
@@ -74,36 +76,33 @@ main .contenedor1 img {
     align-items: center;
     text-align: center;
 }
-.lef{
+.left{
     width: auto;
-    min-height: 20vh;
+    height: auto;
 }
 aside.right {
 
     padding: 15px;
-    background-color: #ccf5c7;
+    background-color: #ccf5c771;
     color: black;
     min-height: 20vh;
-    width: 50%;
+    width: 70%;
 }
-.accordion {
-
-    background-color: #ccf5c7;
+.boton1 {
     cursor: pointer;
-    padding: 15px;
-    width: 100%;
+    padding: 9px;
+    width: 50%;
     border: none;
-    text-align: left;
+    text-align: center;
+    font-size: 15px;
     outline: none;
-    font-size: 18px;
     transition: background-color 0.2s;
-    margin-bottom: 5px;
     border-radius: 15px;
 }
-
-.accordion:hover {
-    background-color: #ccc;
+.btn2{
+    width: 51%;
 }
+
 
 .panel {
     padding: 0 15px;
@@ -115,20 +114,33 @@ aside.right {
 
 /* Ajustes para pantallas pequeñas (móviles) */
 @media (max-width: 900px) {
-    .accordion {
-        font-size: 16px;
-        padding: 10px;
+    .boton1 {
+        text-align: center;
+        font-size: 10px;
+        padding: 0 2px;
+        height: 35px;
+        width: 90px;
     }
 
     aside.right {
-        width: 80%;
+        width: 90%;
         min-height: auto;
     }
+    
     .contenedor2 {
-        flex-direction: column;
+        flex-direction: column-reverse;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+    }
+    .left{
+        text-align: center;
+        display: flex;
+        gap: 1%;
+        width: 90%;
+        min-height: 10vh;
+        justify-content: center;
     }
 }
  .Boton {
@@ -173,3 +185,4 @@ aside.right {
     }
 
 }
+

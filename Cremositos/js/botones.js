@@ -1,5 +1,5 @@
 function login(){
-    window.location.href = "Cremositos/login.html";
+    window.location.href = "login.html";
 }
 function siguiente() {
     window.location.href = "Pedido.html";
@@ -8,7 +8,7 @@ function siguiente() {
 function irCatalogo() {
     if (localStorage.getItem('ingresoComoInvitado') === 'true' && localStorage.getItem('formularioMostrado') === 'false') {
         alert('Por favor llena el formulario con tus datos para tenerlos presente para realizar el domicilio');
-        window.location.href = "../Cremositos/formulario.html";  
+        window.location.href = "/Cremositos/formulario.html";  
         localStorage.setItem('formularioMostrado', 'true'); // Marca que el formulario ya ha sido mostrado
     } else {
         window.location.href = "catalogo.html"; 
@@ -175,7 +175,9 @@ function GuardarCompra() {
         const reader = new FileReader();
         reader.onload = function (e) {
             const blob = new Blob([e.target.result], { type: file.type });
-            const url = URL.createObjectURL(blob);
+            const url = "ComprobantePago/PlantillaComprobante.pdf";
+
+            // Agregar el comprobante a cada producto del carrito
             carrito.forEach(producto => {
                 producto.comprobanteUrl = url;  // Asignamos el URL del comprobante al carrito
             });
@@ -186,7 +188,7 @@ function GuardarCompra() {
                 producto.fechaCompra = fechaActual;
             });
 
-            // Agregar el carrito con el comprobante a las ventas guardadas
+            // Aquí añadimos los datos del carrito con el comprobante y la fecha a las ventas guardadas
             ventasGuardadas.push(carrito);
 
             // Guardar las ventas en localStorage
@@ -194,10 +196,15 @@ function GuardarCompra() {
 
             // Limpiar el carrito después de guardar
             sessionStorage.removeItem('carrito');
+
+            // Mostrar un mensaje de éxito
             alert('Compra guardada exitosamente');
-            window.location.href = "perfilUsrio.html"; 
+
+            // Redirigir a la página del perfil
+            window.location.href = "perfilUsrio.html";
         };
 
+        // Leer el archivo seleccionado y convertirlo a un Blob
         reader.readAsArrayBuffer(file);
     } else {
         alert('Por favor, selecciona un comprobante antes de guardar la compra.');

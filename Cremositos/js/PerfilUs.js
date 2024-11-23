@@ -21,6 +21,7 @@ function mostrarVentasGuardadas() {
 
         ventasGuardadas.forEach((venta, index) => {
             let totalCompra = 0; // Variable para el total de la compra
+            let totalCantidad = 0; // Variable para el total de cantidades
             let fechaCompra = new Date(venta[0]?.fechaCompra || ""); // Tomar la fecha del primer producto
             let fechaHora;
 
@@ -33,14 +34,13 @@ function mostrarVentasGuardadas() {
             // Obtener el comprobante si está disponible
             const comprobanteUrl = venta[0]?.comprobanteUrl || null;
 
-            let tablaHTML = ` 
+            let tablaHTML = `
                 <div class="venta-seccion">
                     <button class="botonDespble" onclick="this.nextElementSibling.classList.toggle('verCompra')">Compra del ${fechaHora}</button>
                     <div class="hidden">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Fecha y Hora</th>
                                     <th>Producto</th>
                                     <th>Cantidad</th>
                                     <th>Precio Unitario</th>
@@ -50,44 +50,36 @@ function mostrarVentasGuardadas() {
                             <tbody>
             `;
 
-            // Aquí puedes agregar más detalles de la venta si tienes otros productos.
-            // Ejemplo:
-            let producto = {
-                nombre: "Producto de prueba",
-                cantidad: 1,
-                precio: 100.0
-            };
-            
-            let totalProducto = producto.cantidad * producto.precio;
-            totalCompra += totalProducto; // Sumar al total de la compra
+            venta.forEach(producto => {
+                const totalProducto = producto.cantidad * producto.precio;
+                totalCompra += totalProducto;
+                totalCantidad += producto.cantidad;
 
-            tablaHTML += `
-                <tr>
-                    <td>${fechaHora}</td>
-                    <td>${producto.nombre}</td>
-                    <td>${producto.cantidad}</td>
-                    <td>$${producto.precio.toFixed(2)}</td>
-                    <td>$${totalProducto.toFixed(2)}</td>
-                </tr>
-            `;
+                tablaHTML += `
+                    <tr>
+                        <td>${producto.nombre}</td>
+                        <td>${producto.cantidad}</td>
+                        <td>$${producto.precio.toFixed(2)}</td>
+                        <td>$${totalProducto.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
 
             // Footer con el total y el ícono para ver el comprobante
             tablaHTML += `
                 <tr>
-                    <td colspan="3"></td>
-                    <td style="text-align: right;"><strong>Total de la compra:</strong></td>
-                    <td><strong>$${totalCompra.toFixed(2)}</strong></td>
-                </tr>
-                <tr>
-                    <td colspan="5" style="text-align: left;">
-                        ${comprobanteUrl ? `<a href="${comprobanteUrl}" target="_blank" class="ver-comprobante">
+                    <td style="text-align: left;">
+                        ${comprobanteUrl ? `<a href="javascript:void(0)" onclick="verComprobante('${comprobanteUrl}')">
                             <img src="/Cremositos/imagen/iconos/pago1.ico" alt="Ver comprobante" style="width: 20px; vertical-align: middle;" />
                             Ver comprobante
                         </a>` : "<span style='color: gray;'>Comprobante no disponible</span>"}
                     </td>
+                    <td style="text-align: left;"><strong>${totalCantidad}</strong></td> <!-- Total de cantidades -->
+                    <td style="text-align: left;"><strong>Total de la compra:</strong></td>
+                    <td><strong>$${totalCompra.toFixed(2)}</strong></td>
                 </tr>
-                            </tbody>
-                        </table>
+                </tbody>
+                </table>
                     </div>
                 </div>
                 <br>
@@ -96,6 +88,12 @@ function mostrarVentasGuardadas() {
             ventasGuardadasDiv.innerHTML += tablaHTML;
         });
     }
+}
+
+// Función para mostrar el comprobante en una ventana emergente
+function verComprobante(url) {
+    // Crear una nueva ventana emergente con el URL del comprobante
+    window.open(url, 'comprobante', 'width=800,height=600,scrollbars=yes');
 }
 
 function generarPDF() {

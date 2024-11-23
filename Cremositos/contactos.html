@@ -3,75 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contactos</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="../Cremositos/css/styleContactos.css">
+    <link rel="stylesheet" href="css/styleContactos.css">
+    <link rel="shortcut icon" href="Cremositos/imagen/iconos/favicon.png" type="image/x-icon">
+    <script src="js/botones.js"></script> 
 </head>
 
 <body class="fondo">
     <div id="header"></div>
     <main>
-        <h1>Agregar Nueva Paleta</h1>
-        <div class="formulario">
-            <input type="text" id="sabor" placeholder="Sabor" required>
-            <input type="number" id="valor" placeholder="Valor" required>
-            <input type="file" id="imagen" accept="image/*" required>
-            <button onclick="agregarProducto()">Agregar Producto</button>
-        </div>
-    
-        <script>
-            function agregarProducto() {
-                const sabor = document.getElementById("sabor").value;
-                const valor = document.getElementById("valor").value;
-                const imagenInput = document.getElementById("imagen");
-    
-                if (!sabor || !valor || !imagenInput.files[0]) {
-                    alert("Por favor, completa todos los campos.");
-                    return;
-                }
-    
-                const imagenURL = URL.createObjectURL(imagenInput.files[0]);
-    
-                // Crear objeto de producto
-                const producto = {
-                    sabor,
-                    valor,
-                    imagenURL
-                };
-    
-                // Obtener productos guardados en localStorage
-                let productos = JSON.parse(localStorage.getItem("productos")) || [];
-    
-                // Añadir el nuevo producto
-                productos.push(producto);
-    
-                // Guardar de nuevo en localStorage
-                localStorage.setItem("productos", JSON.stringify(productos));
-    
-                alert("Producto agregado correctamente!");
-                
-                // Limpiar el formulario
-                document.getElementById("sabor").value = "";
-                document.getElementById("valor").value = "";
-                document.getElementById("imagen").value = "";
-            }
-        </script>
+        <div class="fondo"></div>
+        <hr>
+        <h3>Contactos:</h3>
+       
+        <nav class="contactos">                       
+            <label>Cremositos fritales</label>           
+            <div class="informacion-contacto">
+                <p><strong>Teléfono:</strong> 300 687 1173</p>
+                <p><strong>Dirección:</strong> Calle 59AA, Medellin, Antioquia</p>
+                <p><strong>Correo:</strong> jenyperez13873@gmail.com</p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100009311717128&mibextid=ZbWKwL" target="_blank">Cremositos Frutales</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/cremositos.frutales?igsh=MWxhazlvY3JqbXc3MQ==" target="_blank">Cremositos.Frutales</a></p>
+            </div>  
+            <button class="boton1" onclick="irCatalogo()">Ir a catalogo</button>   
+                                            
+        </nav>
+        
+        
+
+        
     </main>
-    <div id="footer"></div>
+    <div id="footer"></div>    
     <script src="header_footer/conn.js"></script>
 </body>
 </html>
-
-
-<div class="menu" id="dropdownMenu">
-    <ul>
-        <li><a href="inicio.html">Inicio</a></li>
-        <li><a href="formulario.html">Formulario de Pedido</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="Pedido.html">Pedidos</a></li>
-        <!-- Enlace del perfil, oculto inicialmente -->
-        <li><a href="PerfilUsrio.html" id="perfilLink" style="display:none;">Perfil Usuario</a></li>
-        <!-- Enlace para iniciar sesión, visible cuando no se está autenticado -->
-        <li><a href="/login/login.html" id="iniciarSesionLink">Iniciar Sesión</a></li>
-    </ul>
-</div>

@@ -1,12 +1,3 @@
-@font-face {
-    font-family: font1;
-    src: url(font/Fashion\ Fetish\ Outline.ttf);
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Fondo para mejorar contraste */
-}
 
 .logo img {  
     height: 50px;
@@ -14,14 +5,12 @@ body {
     background-color: hsl(120, 94%, 45%);
 }
 
-/* Contenedor principal */
 main {
     min-height: 70vh;
     padding: 50px;
     width: 100%;
 }
 
-/* Tabla de carrito */
 #tablaCarrito {
     width: 60%; /* Ancho de la tabla ajustado */
     margin: 30px auto; /* Centrado automático */

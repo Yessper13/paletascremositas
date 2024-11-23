@@ -1,16 +1,4 @@
-/* Barra de navegación */
-@font-face {
-    font-family: font1;
-    src: url(font/Fashion\ Fetish\ Outline.ttf); 
-}
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('ruta/de/tu/imagen/fondo.jpg'); /* Reemplaza con la ruta de tu imagen de fondo */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    
-}
+
 main {
     padding: 50px;
     overflow-y: auto; /* Habilita el desplazamiento solo para el catálogo */
@@ -136,7 +124,14 @@ td {
 }
 
 /* Media Queries para dispositivos pequeños */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .boton1 {
+        text-align: center;
+        font-size: 10px;
+        padding: 0 2px;
+        height: 35px;
+        width: 90px;
+    }
     .navbar {
         flex-direction: column;
         align-items: flex-start;

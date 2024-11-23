@@ -56,11 +56,11 @@ main{
 
 .caja_trasera div h3{
    font-weight: 400;
-   font-size: 46px;
+   font-size: 26px;
 }
 
 .caja_trasera div p{
-    font-size: 36px;
+    font-size: 16px;
     font-weight: 300;
 }
 
@@ -103,7 +103,7 @@ main{
 }
 
 .contenedor_login_register form h2{
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
     color: rgb(14, 14, 146);
@@ -136,8 +136,13 @@ main{
 .formulario_login{
     opacity: 1;
     display: block;
+    
 }
+.botones{
+    display: flex;
+    gap: 24%;
 
+}
 .formulario_register{
     display: none;
 }
