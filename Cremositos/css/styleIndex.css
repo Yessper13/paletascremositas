@@ -1,3 +1,14 @@
+html, body {
+    height: 100%; /* Asegura que el html y body ocupen toda la altura */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+body {
+    display: flex; /* Usa flexbox para centrar verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #f0f0f0; /* Color de fondo para el cuerpo */
+}
 
 .container {
     position: relative;
@@ -7,21 +18,48 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20% auto;
-    width: 50%;
+    margin: 5% auto; /* Cambiado a un margen más pequeño para pantallas pequeñas */
+    width: 90%; /* Uso de un porcentaje para que se ajuste al tamaño de la pantalla */
+    max-width: 600px; /* Tamaño máximo para pantallas más grandes */
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em; /* Aumentar el tamaño de fuente para mejorar la legibilidad */
     color: rgb(84, 240, 12);
     margin-bottom: 20px;
 }
 
 p {
     color: #666;
+    font-size: 1em; /* Tamaño de fuente base */
 }
 
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Reducir el tamaño del encabezado en pantallas más pequeñas */
+    }
 
+    p {
+        font-size: 0.9em; /* Reducir el tamaño del párrafo en pantallas más pequeñas */
+    }
 
+    .container {
+        padding: 20px; /* Reducir el padding para pantallas más pequeñas */
+    }
+}
 
+@media (max-width: 40px) {
+    h1 {
+        font-size: 1.5em; /* Tamaño de fuente aún más pequeño para dispositivos móviles */
+    }
 
+    p {
+        font-size: 0.8em; /* Tamaño de fuente pequeño para dispositivos móviles */
+    }
+
+    .container {
+        margin: 10% auto; /* Aumentar el margen para dispositivos móviles */
+        padding: 15px; /* Aumentar el padding para mayor comodidad en móviles */
+    }
+}

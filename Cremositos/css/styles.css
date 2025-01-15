@@ -254,7 +254,35 @@ button {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
+    section.info {
+    
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .right{
+
+        min-width: 40vh;
+    }
+    header {
+        display: flex; /* Usa Flexbox para controlar la disposición */
+        justify-content: flex-start; /* Alinea los elementos a la izquierda */
+        align-items: center; /* Centra verticalmente si hay otros elementos */
+        padding: 10px; /* Ajusta el espaciado interno si es necesario */
+    }
+    
+    header .logo {
+        margin-right: auto; /* Asegura que el logo quede a la izquierda */
+    }
+    
+    header .logo img {
+        height: 40px; /* Mantiene la altura del logo */
+        box-shadow: 0 0 100px 90px rgba(0, 255, 0, 0.897);
+        background-color: hsl(120, 94%, 45%);
+    }
     html {
         font-size: 16px;
     }

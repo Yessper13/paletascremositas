@@ -1,35 +1,33 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    
 }
 
-body{
+body {
     /* background-image: url(../Imagenes/textura.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    
 }
 
-main{
+main {
     width: 100%;
     padding: 20px;
     margin: auto;
     margin-top: 100px;
-
 }
-.contenedor_todo{
+
+.contenedor_todo {
     width: 100%;
     max-width: 800px;
     margin: auto;
     position: relative;
 }
 
-.caja_trasera{
+.caja_trasera {
     width: 100%;
     padding: 10px 20px;
     display: flex;
@@ -39,32 +37,31 @@ main{
     background-color: rgba(5, 1, 26, 0.158);
     border-radius: 30px;
     border: #fff;
-
 }
 
-.caja_trasera div{
+.caja_trasera div {
     margin: 100px 40px;
     color: white;
     transition: all 500ms;
 }
 
 .caja_trasera div p,
-.caja_trasera button{
+.caja_trasera button {
     color: #fff;
     margin-top: 30px;
 }
 
-.caja_trasera div h3{
-   font-weight: 400;
-   font-size: 26px;
+.caja_trasera div h3 {
+    font-weight: 400;
+    font-size: 26px;
 }
 
-.caja_trasera div p{
+.caja_trasera div p {
     font-size: 16px;
     font-weight: 300;
 }
 
-.caja_trasera button{
+.caja_trasera button {
     padding: 10px 40px;
     border: 2px solid #fff;
     border-radius: 10px;
@@ -76,78 +73,14 @@ main{
     transition: all 300ms;
     outline: none;
 }
-.caja_trasera button:hover{
-   background: #fff;
-   color: rgb(14, 14, 146); 
-}
-/*formularios*/
-.contenedor_login_register{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 380px;
-    position: relative;
-    top: -185px;
-    left: 10px;
 
-    transition: left 500ms cubic-bezier(0.557, 1, 0.200, 1.27);
-    
-}
-
-.contenedor_login_register form{
-  width: 100%;
-  padding: 80px 20px;
-  background: #fff;
-  position: absolute;
-  border-radius: 20px;
-}
-
-.contenedor_login_register form h2{
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
+.caja_trasera button:hover {
+    background: #fff;
     color: rgb(14, 14, 146);
 }
 
-.contenedor_login_register form input{
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 10PX;
-    background: #fafafa;
-    font-size: 16px;
-    outline: none;
-
-}
-.contenedor_login_register form button{
-    padding: 10px 40px;
-    margin-top: 40px;
-    border-radius: 10px;
-    border: none;
-    font-size: 14px;
-    background: #2b2be6;
-    font-weight: 600;
-    cursor: pointer;
-    color: white;
-    outline: none;
-}
-
-.formulario_login{
-    opacity: 1;
-    display: block;
-    
-}
-.botones{
-    display: flex;
-    gap: 24%;
-
-}
-.formulario_register{
-    display: none;
-}
-/*contenedor pedido*/
-.contenedor_pedido{
+/* Formularios */
+.contenedor_login_register {
     display: flex;
     align-items: center;
     width: 100%;
@@ -155,35 +88,36 @@ main{
     position: relative;
     top: -185px;
     left: 10px;
-
     transition: left 500ms cubic-bezier(0.557, 1, 0.200, 1.27);
-} 
-.contenedor_pedido form{
+}
+
+.contenedor_login_register form {
     width: 100%;
     padding: 80px 20px;
     background: #fff;
     position: absolute;
     border-radius: 20px;
 }
-.contenedor_pedido form h2{
-    font-size: 30px;
+
+.contenedor_login_register form h2 {
+    font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
     color: rgb(14, 14, 146);
-} 
+}
 
-.contenedor_pedido form input{
+.contenedor_login_register form input {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
     border: none;
-    border-radius: 10PX;
+    border-radius: 10px;
     background: #fafafa;
     font-size: 16px;
     outline: none;
-
 }
-.contenedor_pedido form button{
+
+.contenedor_login_register form button {
     padding: 10px 40px;
     margin-top: 40px;
     border-radius: 10px;
@@ -196,45 +130,221 @@ main{
     outline: none;
 }
 
-.formulario_pedido{
+.formulario_login {
     opacity: 1;
     display: block;
-}    
+}
 
-/*Responsive Desing*/
+.botones {
+    display: flex;
+    gap: 24%;
+}
 
-@media screen and (max-width: 850px){
-    main{
+.formulario_register {
+    display: none;
+}
+
+/* Contenedor pedido */
+.contenedor_pedido {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.557, 1, 0.200, 1.27);
+}
+
+.contenedor_pedido form {
+    width: 100%;
+    padding: 80px 20px;
+    background: #fff;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor_pedido form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(14, 14, 146);
+}
+
+.contenedor_pedido form input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor_pedido form button {
+    padding: 10px 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    background: #2b2be6;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.formulario_pedido {
+    opacity: 1;
+    display: block;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 850px) {
+    main {
         margin-top: 50px;
     }
-    
-    .caja_trasera{
 
+    .caja_trasera {
         max-width: 350px;
         height: 300px;
         flex-direction: column;
         margin: auto;
+        position: relative; /* Añadido para mantener consistencia en layout */
     }
-    
-    .caja_trasera div{
-        margin: 0px;
+
+    .caja_trasera div {
+        margin: 0;
         position: absolute;
     }
 
-    /*formulario*/
-    .contenedor_login_register{
-        top: -10px;
-        left: -5px;
+    /* Formulario */
+    .contenedor_login_register {
+        position: relative; /* Asegura el posicionamiento correcto */
+        top: 0;
+        left: 0;
         margin: auto;
+        width: 100%; /* Asegura que el contenedor ocupe el espacio disponible */
+        padding: 10px; /* Añade algo de espacio interno */
     }
-    .contenedor_login_register form{
+
+    .contenedor_login_register form {
         position: relative;
+        display: flex;
+        flex-direction: column; /* Asegura alineación vertical en dispositivos pequeños */
+        gap: 10px; /* Añade espacio entre los elementos del formulario */
     }
 
+    .contenedor_login_register form h2 {
+        font-size: 24px; /* Ajusta tamaño según pantallas pequeñas */
+        text-align: center;
+    }
 
+    .contenedor_login_register form input,
+    .contenedor_login_register form button {
+        font-size: 14px;
+        padding: 10px 20px; /* Ajustado para mejor visualización */
+        width: 100%; /* Asegura que ocupen todo el ancho del contenedor */
+        box-sizing: border-box; /* Considera el padding dentro del ancho */
+    }
+
+    /* Contenedor pedido */
+    .contenedor_pedido {
+        position: relative; /* Ajuste para consistencia */
+        margin: auto;
+        width: 100%; /* Asegura que el contenedor ocupe el ancho */
+        padding: 10px; /* Añade algo de espacio interno */
+    }
+
+    .contenedor_pedido form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenedor_pedido form h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .contenedor_pedido form input,
+    .contenedor_pedido form button {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
+/* Ajustes para pantallas muy pequeñas */
+
+@media screen and (max-width: 480px) {
+    body {
+        overflow: hidden; /* Desactiva el desplazamiento */
+        display: flex; /* Usa Flexbox para centrar el contenido */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        height: 100vh; /* Asegúrate de ocupar toda la altura de la pantalla */
+        padding: 0; /* Elimina cualquier padding adicional */
+        margin: 0; /* Elimina cualquier margen adicional */
+    }
+    main {
+        width: 100%; /* Asegura que el contenido no se desborde */
+        max-width: 380px; /* Controla el ancho máximo del contenido */
+    }
+
+    .caja_trasera {
+        padding: 5px;
+        max-width: 300px;
+        height: auto;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    .caja_trasera div {
+        margin: 10px; /* Reducir márgenes entre los textos */
+        font-size: 12px; /* Reducir tamaño de fuente */
+        position: relative; /* Evitar solapamiento */
+        text-align: center; /* Centrar contenido */
+    }
 
 
+    .contenedor_login_register{
+        min-width: 40vh;
+    }
+    .contenedor_login_register,
+    
 
+    .contenedor_login_register form,
+    .contenedor_pedido form {
+        
+        padding: 20px 10px; /* Reducir padding de los formularios */
+    }
 
+    .contenedor_login_register form h2,
+    .contenedor_pedido form h2 {
+        font-size: 24px; /* Tamaño de fuente más pequeño */
+    }
+
+    .contenedor_login_register form input,
+    .contenedor_pedido form input {
+        font-size: 14px; /* Tamaño de fuente reducido */
+        padding: 8px; /* Espaciado reducido */
+    }
+
+    .contenedor_login_register form button,
+    .contenedor_pedido form button {
+        border: 1px solid blue;
+        flex-direction: row;
+        font-size: 12px; /* Tamaño de fuente reducido */
+        padding: px; /* Espaciado reducido */
+        width: 50%; /* Botones adaptados al ancho */
+    }
+
+    .caja_trasera button {
+        font-size: 12px; /* Reducir tamaño de texto */
+        padding: px 20px; /* Reducir padding del botón */
+    }
+}
