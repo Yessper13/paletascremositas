@@ -201,7 +201,7 @@ function GuardarCompra() {
             alert('Compra guardada exitosamente');
 
             // Redirigir a la página del perfil
-            window.location.href = "perfilUsrio.html";
+            window.location.href = "PerfilUsrio.html";
         };
 
         // Leer el archivo seleccionado y convertirlo a un Blob
