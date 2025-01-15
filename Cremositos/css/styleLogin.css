@@ -232,7 +232,6 @@ main {
 
     .contenedor_login_register form {
         position: relative;
-        display: flex;
         flex-direction: column; /* Asegura alineación vertical en dispositivos pequeños */
         gap: 10px; /* Añade espacio entre los elementos del formulario */
     }
